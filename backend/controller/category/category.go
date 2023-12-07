@@ -2,7 +2,7 @@ package controller
 
 import (
 	"net/http"
-	"github.com/Thadthon08/se-66-stock/entity"
+	"github.com/Pcyfer/se-66-stock/entity"
 	"github.com/gin-gonic/gin"
 )
 

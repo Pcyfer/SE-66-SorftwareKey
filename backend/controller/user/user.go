@@ -4,7 +4,7 @@ import (
 	 "github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 	 _"gorm.io/gorm"
-	"github.com/Thadthon08/se-66-stock/entity"
+	"github.com/Pcyfer/se-66-stock/entity"
 	"net/http"
 	"github.com/asaskevich/govalidator"
 )
