@@ -3,7 +3,7 @@ package controller
 import (
 	"net/http"
 
-	"github.com/Thadthon08/se-66-stock/entity"
+	"github.com/Pcyfer/se-66-stock/entity"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,7 +20,7 @@ func CreateSoftwarekey(c *gin.Context) {
 	}
 	//ค้าหา Product ด้วย id
 	if tx := entity.DB().Where("id = ?", Softwarekey.ProductID).First(&Product); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Product not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Softwarekey not found"})
 		return
 	}
 

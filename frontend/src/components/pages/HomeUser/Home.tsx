@@ -16,12 +16,17 @@ import Carousels from "../../layouts/Carousel/Carousels";
 import ShowProduct from "../../layouts/ShowProduct_HOME/ShowProduct";
 import SearchProduct from "../../layouts/SearchProduct";
 import { Footer } from "antd/es/layout/layout";
+import { Navigate, useNavigate } from "react-router-dom"
+
+
 
 export default function Home() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<null | HTMLElement>(null);
   const [userID] = React.useState(localStorage.getItem("uid"));
   const isMenuOpen = Boolean(anchorEl);
+
+  const navigate = useNavigate();
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -98,7 +103,7 @@ export default function Home() {
             <SearchProduct />
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <IconButton size="large" aria-label="show 4 new cart" color="inherit">
+              <IconButton size="large" aria-label="show 4 new cart" color="inherit" onClick= {() => navigate("/cart_user")}>
                 <Badge badgeContent={4} color="error">
                   <ShoppingCartSharpIcon />
                 </Badge>

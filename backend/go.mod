@@ -1,4 +1,4 @@
-module github.com/Thadthon08/se-66-stock
+module github.com/Pcyfer/se-66-stock
 
 go 1.19
 

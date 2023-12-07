@@ -3,7 +3,7 @@ package controller
 import (
 	"net/http"
 
-	"github.com/Thadthon08/se-66-stock/entity"
+	"github.com/Pcyfer/se-66-stock/entity"
 	"github.com/gin-gonic/gin"
 )
 
@@ -30,7 +30,7 @@ func CreateManufacturer(c *gin.Context) {
 	var Manufacturers entity.Manufacturer
 
 	if err := c.ShouldBindJSON(&Manufacturers); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"errorb": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 

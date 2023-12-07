@@ -12,6 +12,7 @@ import StockEditPage from "./components/pages/StockEditPage";
 import SoftwareKey from "./components/pages/SoftwareKey";
 import SoftwareKeyCreate from "./components/pages/SoftwareKeyCreate";
 import HomeUser from "./components/pages/HomeUser";
+import CartUser from "./components/pages/Cart_User";
 import "./App.css";
 import SoftwareKeyEdit from "./components/pages/SoftwareKeyEdit";
 import Signin_Admin from "./components/pages/Signin_Admin";
@@ -136,6 +137,7 @@ export default function App() {
             <Route path="/" element={<HomeUser />} />
             <Route path="/home" element={<HomeUser />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/cart_user" element={<CartUser />} />
           </Routes>
         </ThemeProvider>
       );

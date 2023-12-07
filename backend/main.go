@@ -3,14 +3,16 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 
-	admin_controller "github.com/Thadthon08/se-66-stock/controller/admin"
-	category_controller "github.com/Thadthon08/se-66-stock/controller/category"
-	login_controller "github.com/Thadthon08/se-66-stock/controller/login"
-	Product_controller "github.com/Thadthon08/se-66-stock/controller/product"
-	Softwarekey_controller "github.com/Thadthon08/se-66-stock/controller/softwarekey"
-	user_controller "github.com/Thadthon08/se-66-stock/controller/user"
-
-	"github.com/Thadthon08/se-66-stock/entity"
+	admin_controller "github.com/Pcyfer/se-66-stock/controller/admin"
+	category_controller "github.com/Pcyfer/se-66-stock/controller/category"
+	login_controller "github.com/Pcyfer/se-66-stock/controller/login"
+	Product_controller "github.com/Pcyfer/se-66-stock/controller/product"
+	Softwarekey_controller "github.com/Pcyfer/se-66-stock/controller/softwarekey"
+	user_controller "github.com/Pcyfer/se-66-stock/controller/user"
+	cart_controller "github.com/Pcyfer/se-66-stock/controller/cart"
+	cartitem_controller "github.com/Pcyfer/se-66-stock/controller/cartitem"
+	voucher_controller "github.com/Pcyfer/se-66-stock/controller/voucher"
+	"github.com/Pcyfer/se-66-stock/entity"
 )
 
 func main() {
@@ -52,7 +54,30 @@ func main() {
 	r.POST("/manufacturer", Product_controller.CreateManufacturer)
 	r.GET("/manufacturer", Product_controller.ListManufacturer)
 	r.GET("/manufacturer/:id", Product_controller.GetManufacturer)
+
+	//Cart
+	r.POST("/cart", cart_controller.CreateCart)
+	r.DELETE("/cart/:id", cart_controller.DeleteCart)
+	r.GET("/cart/:id", cart_controller.GetCart)
+	r.PATCH("cart", cart_controller.UpdateCart)
+
+	//CartItem
+	r.POST("/cartitem", cartitem_controller.CreateCartItem)
+	r.GET("/cartitem/:id", cartitem_controller.GetCartItem)
+	r.GET("/cartitem", cartitem_controller.ListCartItems)
+	r.DELETE("/cartitem/:id", cartitem_controller.DeleteCartItem)
+	r.PATCH("/cartitem/:id", cartitem_controller.UpdateCartItem)
+
+	//Voucher
+	r.POST("/voucher", voucher_controller.CreateVoucher)
+	r.GET("/voucher/:id", voucher_controller.GetVoucher)
+	r.GET("/voucher", voucher_controller.ListVouchers)
+	r.DELETE("/voucher/:id", voucher_controller.DeleteVoucher)
+	r.PATCH("/voucher/:id", voucher_controller.UpdateVoucher)
 	r.Run()
+
+	
+
 
 }
 
